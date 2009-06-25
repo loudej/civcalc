@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CombatSimulator.Model
+namespace CombatSimulator.Model.SpecialRules
 {
     public class CollateralDamage : UnitDecorator
     {

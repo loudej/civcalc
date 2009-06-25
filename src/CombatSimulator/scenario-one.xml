@@ -1,0 +1,43 @@
+﻿<Scenario>
+  <Stack name="Attackers" Hills="true">
+    <Cannon Barrage="50"/>
+    <Cannon Barrage="50"/>
+    <Cannon Barrage="20"/>
+    <Cannon Barrage="20"/>
+
+    <Musketman Bonus="20"/>
+    <Musketman Bonus="20"/>
+    <Musketman Bonus="20"/>
+    <Musketman Bonus="20"/>
+    <Musketman Bonus="20"/>
+    <Musketman Bonus="20"/>
+    <Musketman Bonus="20"/>
+    <Musketman Bonus="20"/>
+    <Musketman Bonus="10" Cover="25"/>
+    <Musketman Bonus="10" Cover="25"/>
+    <Musketman Bonus="10" Cover="25"/>
+    <Musketman Bonus="10"/>
+
+    <Pikeman Bonus="10" Shock="10" />
+    <Pikeman Bonus="10" Shock="10" />
+    <Pikeman Bonus="10"  />
+
+  </Stack>
+
+  <Stack name="Defenders" City="20" Hills="true">
+    <WarElephant Bonus="20"/>
+    <WarElephant Bonus="20"/>
+    <Knight Bonus="20"/>
+    <Knight Bonus="20"/>
+    <Knight Bonus="20"/>
+    <Knight Bonus="20"/>
+    <Knight Bonus="20"/>
+
+    <Longbowman Garrison="20" HillsDefense="20" Fortify="25" />
+    <Longbowman Garrison="20" HillsDefense="20" Fortify="25" />
+    <Longbowman Garrison="20" HillsDefense="20" Fortify="25" />
+    <Longbowman Garrison="20" HillsDefense="20" Fortify="25" />
+    <Longbowman Garrison="20" HillsDefense="20" Fortify="25" />
+    <Longbowman Garrison="20" HillsDefense="20" Fortify="25" />
+  </Stack>
+</Scenario>

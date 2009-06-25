@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CombatSimulator.Model.CategoryBonuses;
+using CombatSimulator.Model.SpecialRules;
+using CombatSimulator.Model.TerrainBonuses;
+using CombatSimulator.Model.Terrains;
 
 namespace CombatSimulator.Model
 {

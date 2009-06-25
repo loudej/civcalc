@@ -50,17 +50,29 @@
   <ItemGroup>
     <Compile Include="Battle.cs" />
     <Compile Include="Combat.cs" />
+    <Compile Include="Model\Categories\ArcherUnit.cs" />
     <Compile Include="Model\Bonus.cs" />
-    <Compile Include="Model\CollateralDamage.cs" />
-    <Compile Include="Model\MeleeUnit.cs" />
-    <Compile Include="Model\MountedUnit.cs" />
-    <Compile Include="Model\Terrain.cs" />
-    <Compile Include="Model\VsAxeman.cs" />
-    <Compile Include="Model\VsCity.cs" />
-    <Compile Include="Model\VsMelee.cs" />
+    <Compile Include="Model\SpecialRules\FirstStrike.cs" />
+    <Compile Include="Model\SpecialRules\FirstStrikeChance.cs" />
+    <Compile Include="Model\TerrainBonuses\CityDefense.cs" />
+    <Compile Include="Model\SpecialRules\CollateralDamage.cs" />
+    <Compile Include="Model\Categories\MeleeUnit.cs" />
+    <Compile Include="Model\Categories\MountedUnit.cs" />
+    <Compile Include="Model\Categories\GunpowderUnit.cs" />
+    <Compile Include="Model\TerrainBonuses\Fortify.cs" />
+    <Compile Include="Model\Terrains\City.cs" />
+    <Compile Include="Model\Terrains\Forest.cs" />
+    <Compile Include="Model\Terrains\Hills.cs" />
+    <Compile Include="Model\TerrainBonuses\NoDefenseBonus.cs" />
+    <Compile Include="Model\Terrains\TerrainBase.cs" />
+    <Compile Include="Model\CategoryBonuses\VsArcher.cs" />
+    <Compile Include="Model\CategoryBonuses\VsAxeman.cs" />
+    <Compile Include="Model\TerrainBonuses\VsCity.cs" />
+    <Compile Include="Model\CategoryBonuses\VsMelee.cs" />
+    <Compile Include="Model\UnitBase.cs" />
     <Compile Include="Model\UnitDecorator.cs" />
     <Compile Include="Model\UnitExtensions.cs" />
-    <Compile Include="Model\VsMounted.cs" />
+    <Compile Include="Model\CategoryBonuses\VsMounted.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stack.cs" />
@@ -69,11 +81,10 @@
     <Compile Include="Serialization\ScenarioLoader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bulk-scenario.xml" />
-    <Content Include="scenario-merrill.xml">
+    <Content Include="scenario-one.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="scenario-rhinelander.xml">
+    <Content Include="scenario-two.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

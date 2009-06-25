@@ -1,4 +1,6 @@
-namespace CombatSimulator.Model
+using CombatSimulator.Model.Categories;
+
+namespace CombatSimulator.Model.CategoryBonuses
 {
     public class VsMounted : UnitDecorator
     {

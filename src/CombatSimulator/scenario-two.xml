@@ -1,0 +1,55 @@
+﻿<Scenario>
+  <Stack name="Attackers" Hills="true">
+    <WarElephant Bonus="20"/>
+    <Catapult Barrage="50" />
+    <Catapult Barrage="50" />
+    <Maceman Bonus="10" Shock="25"/>
+    <Maceman Bonus="20" />
+    <Maceman Bonus="10" Raider="25"/>
+    <Pikeman Bonus="20" />
+    <Pikeman Bonus="20" />
+    <Pikeman Bonus="10" Shock="10" />
+    <Pikeman Bonus="10" Shock="10" />
+    <Pikeman Bonus="10" Shock="10" />
+
+    <WarElephant Bonus="10" Shock="25"/>
+    <WarElephant Bonus="10" Shock="25"/>
+    <Swordsman Bonus="10" Raider="25"/>
+    <HorseArcher Bonus="10" Shock="25" />
+    <HorseArcher Bonus="10" Shock="25" />
+    <Crossbowman Bonus="10" Cover="25" />
+    <Crossbowman Bonus="10" Cover="25" />
+    <Crossbowman Bonus="10" Cover="25" />
+    <Axeman Bonus="30"/>
+    <Axeman Bonus="10"/>
+    <Axeman Bonus="10"/>
+    <Spearman Bonus="10"/>
+
+    <Knight />
+    <Crossbowman Bonus="10" Cover="25" />
+    <Crossbowman Shock="25" Cover="25" />
+    <Crossbowman Bonus="10" Cover="25" />
+    <Crossbowman Shock="25" FirstStrike="1" />
+    <Crossbowman Bonus="10"  />
+    <Pikeman Bonus="20" Cover="25"/>
+    <Pikeman Bonus="10" Cover="25" Shock="25"/>
+
+    <Cataphract Bonus="10" />
+
+  </Stack>
+
+  <Stack name="Defenders" City="0" Hills="true">
+    <Longbowman Garrison="75" Shock="10" Fortify="25" FirstStrike="1"/>
+    <Longbowman Garrison="45" Fortify="25" FirstStrike="1"/>
+    <WarElephant Bonus="20"/>
+    <WarElephant Bonus="10"/>
+    <Swordsman Raider="45"/>
+    <Swordsman Bonus="10"/>
+    <Catapult />
+    <Catapult />
+    <Catapult />
+    <Chariot Bonus="10" Shock="25"/>
+    <Archer Garrison="20" Shock="25" FirstStrike="1"/>
+    <Archer Bonus="10" Shock="25" FirstStrike="1"/>
+  </Stack>
+</Scenario>

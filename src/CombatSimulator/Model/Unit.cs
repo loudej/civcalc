@@ -1,55 +1,11 @@
 ﻿using System;
+using CombatSimulator.Model.Categories;
+using CombatSimulator.Model.CategoryBonuses;
+using CombatSimulator.Model.SpecialRules;
+using CombatSimulator.Model.TerrainBonuses;
 
 namespace CombatSimulator.Model
 {
-    public class BaseUnit : Unit
-    {
-        private readonly string _name;
-        private readonly int _strength;
-
-        public BaseUnit(string name, int strength)
-        {
-            Self = this;
-            _name = name;
-            _strength = strength;
-        }
-
-        public override string Name { get { return _name; } }
-        public override int Strength { get { return _strength; } }
-        public override int StrengthBonus() { return 0; }
-        public override int BonusAgainst(Unit opponent, bool attacking) { return 0; }
-        public override bool Used { get; set; }
-        public override int Health { get; set; }
-
-        public override int FirstStrikes()
-        {
-            return 0;
-        }
-
-        public override int CollateralDamageStrength(int bonus)
-        {
-            return _strength * (100 + bonus);
-        }
-
-        public override void CollateralDamage(int attackStrength, int minimumHealth, bool verbose)
-        {
-            var damage = 10 * (3 * attackStrength + Strength * 100) / (3 * Strength * 100 + attackStrength);
-            if (verbose)
-            {
-                Console.Write("{0} ", damage);
-            }
-            if (Health > minimumHealth)
-                Health = Math.Max(Health - damage, minimumHealth);
-        }
-
-        public override string ToString()
-        {
-            return _name;
-        }
-
-        public override Unit Self { get; set; }
-    }
-
     public abstract class Unit
     {
         public abstract Unit Self { get; set; }
@@ -91,89 +47,89 @@ namespace CombatSimulator.Model
 
         public static Unit Axeman()
         {
-            return new VsMelee(new MeleeUnit(new BaseUnit("Axeman", 5)), 50);
+            return new VsMelee(new MeleeUnit(new UnitBase("Axeman", 5)), 50);
         }
 
         public static Unit Spearman()
         {
-            return new VsMounted(new MeleeUnit(new BaseUnit("Spearman", 4)), 100);
+            return new VsMounted(new MeleeUnit(new UnitBase("Spearman", 4)), 100);
         }
 
         public static Unit Archer()
         {
-            return new FirstStrike(new CityDefense(new HillsDefense(new ArcherUnit(new BaseUnit("Archer", 3)), 25), 50));
+            return new FirstStrike(new CityDefense(new HillsDefense(new ArcherUnit(new UnitBase("Archer", 3)), 25), 50));
         }
 
         public static Unit Swordsman()
         {
-            return new VsCity(new MeleeUnit(new BaseUnit("Swordsman", 6)), 10);
+            return new VsCity(new MeleeUnit(new UnitBase("Swordsman", 6)), 10);
         }
 
         public static Unit Catapult()
         {
-            return new CollateralDamage(new BaseUnit("Catapult", 5), 0, 5)
+            return new CollateralDamage(new UnitBase("Catapult", 5), 0, 5)
                 .NoDefenseBonus();
         }
 
         public static Unit Chariot()
         {
-            return new VsAxeman(new MountedUnit(new BaseUnit("Chariot", 4)), 100)
+            return new VsAxeman(new MountedUnit(new UnitBase("Chariot", 4)), 100)
                 .NoDefenseBonus();
         }
 
         public static Unit HorseArcher()
         {
-            return new MountedUnit(new BaseUnit("HorseArcher", 6))
+            return new MountedUnit(new UnitBase("HorseArcher", 6))
                 .NoDefenseBonus();
         }
 
         public static Unit Crossbowman()
         {
-            return new FirstStrike(new VsMelee(new ArcherUnit(new BaseUnit("Crossbowman", 6)), 50));
+            return new FirstStrike(new VsMelee(new ArcherUnit(new UnitBase("Crossbowman", 6)), 50));
         }
 
         public static Unit Knight()
         {
-            return new IgnoreFirstStrike(new MountedUnit(new BaseUnit("Knight", 10)))
+            return new IgnoreFirstStrike(new MountedUnit(new UnitBase("Knight", 10)))
                 .NoDefenseBonus();
         }
         public static Unit Cataphract()
         {
-            return new IgnoreFirstStrike(new MountedUnit(new BaseUnit("Cataphract", 12)))
+            return new IgnoreFirstStrike(new MountedUnit(new UnitBase("Cataphract", 12)))
                 .NoDefenseBonus();
         }
 
         public static Unit Cannon()
         {
-            return new CollateralDamage(new BaseUnit("Cannon", 12), 0, 6)
+            return new CollateralDamage(new UnitBase("Cannon", 12), 0, 6)
                 .NoDefenseBonus();
         }
 
         public static Unit Musketman()
         {
-            return new GunpowderUnit(new BaseUnit("Musketman", 9))
+            return new GunpowderUnit(new UnitBase("Musketman", 9))
                 .NoDefenseBonus();
         }
 
         public static Unit WarElephant()
         {
-            return new VsMounted(new MountedUnit(new BaseUnit("WarElephant", 8)), 50)
+            return new VsMounted(new MountedUnit(new UnitBase("WarElephant", 8)), 50)
                 .NoDefenseBonus();
         }
 
         public static Unit Longbowman()
         {
-            return new FirstStrike(new CityDefense(new HillsDefense(new ArcherUnit(new BaseUnit("Longbowman", 6)), 25), 25));
+            return new FirstStrike(new CityDefense(new HillsDefense(new ArcherUnit(new UnitBase("Longbowman", 6)), 25), 25));
         }
 
         public static Unit Maceman()
         {
-            return new VsMelee(new MeleeUnit(new BaseUnit("Maceman", 8)), 50);
+            return new VsMelee(new MeleeUnit(new UnitBase("Maceman", 8)), 50);
         }
 
         public static Unit Pikeman()
         {
-            return new VsMounted(new MeleeUnit(new BaseUnit("Pikeman", 6)), 100);
+            return new VsMounted(new MeleeUnit(new UnitBase("Pikeman", 6)), 100);
         }
     }
 

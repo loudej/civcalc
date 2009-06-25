@@ -1,10 +1,10 @@
 namespace CombatSimulator.Model
 {
-    public class VsAxeman : UnitDecorator
+    public class Fortify : UnitDecorator
     {
         private readonly int _bonus;
 
-        public VsAxeman(Unit decorated, int bonus)
+        public Fortify(Unit decorated, int bonus)
             : base(decorated)
         {
             _bonus = bonus;
@@ -12,7 +12,7 @@ namespace CombatSimulator.Model
 
         public override int BonusAgainst(Unit opponent, bool attacking)
         {
-            return (opponent.Name == "Axeman" ? _bonus : 0) + base.BonusAgainst(opponent, attacking);
+            return (attacking == false ? _bonus : 0) + base.BonusAgainst(opponent, attacking);
         }
     }
 }

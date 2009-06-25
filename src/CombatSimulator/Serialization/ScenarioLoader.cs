@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using CombatSimulator.Model;
+using CombatSimulator.Model.Terrains;
 
 namespace CombatSimulator.Serialization
 {
